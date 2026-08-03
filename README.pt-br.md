@@ -1,18 +1,18 @@
-# Caminhos Mais Rentáveis de Aquisição de Novos Pacientes
+# Heatmaps de Coorte — Retenção de Pacientes
 
 ## Contexto
-Análise para uma empresa de diagnósticos de saúde de grande porte, com três variantes de segmentação: todos os canais, com detalhamento de operadora/convênio, e visão consolidada.
+Análise de retenção mês a mês para uma empresa de diagnósticos de saúde, cobrindo coortes de aquisição por canal digital e por subcanal (ex.: mídia paga de busca).
 
 ## Pergunta de negócio
-Qual é o caminho (combinação canal → subcanal → campanha → operadora/produto) que traz o paciente novo mais rentável? Onde concentrar esforço de aquisição?
+Quanto tempo um paciente adquirido em um canal específico continua retornando? A retenção varia por canal de aquisição?
 
 ## Metodologia
-- Leitura e limpeza de base de atendimentos, com deduplicação por paciente e tratamento de valores nulos/categorias "Não identificado".
-- Construção de combinações completas (canal × subcanal × ... × operadora) e ranking Top 20 por volume e por receita.
-- Funções de visualização reutilizáveis para inspeção rápida e comparação entre cortes.
+- Query BigQuery que constrói a coorte de aquisição, calcula meses desde a aquisição e a taxa de retenção mês a mês.
+- Heatmap (matriz coorte × mês) para visualizar rapidamente onde a retenção cai — separado por canal Digital e por subcanal Paid Search.
+- Transformações downstream feitas 100% em pandas a partir de um único carregamento de dados (sem queries redundantes).
 
 ## Stack
-`Python` · `pandas` · `matplotlib` · `SQL (BigQuery)`
+`Python` · `pandas` · `matplotlib` (heatmap) · `SQL (BigQuery)`
 
 ## So What?
-Ao invés de decidir investimento por canal isolado, o ranking de combinações completas revela nichos de alta rentabilidade (ex.: um subcanal específico cruzado com um tipo de convênio) que ficariam escondidos em análises agregadas por canal.
+O heatmap expõe visualmente em qual mês específico a maior parte da coorte deixa de retornar — informação que orienta em qual momento do ciclo de vida (ex.: mês 2 ou 3) vale a pena investir em campanhas de reativação.
