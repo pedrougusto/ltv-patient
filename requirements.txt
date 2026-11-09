@@ -1,0 +1,9 @@
+pandas
+numpy
+matplotlib
+seaborn
+google-cloud-bigquery
+google-cloud-bigquery-storage
+db-dtypes
+pyarrow
+openpyxl
