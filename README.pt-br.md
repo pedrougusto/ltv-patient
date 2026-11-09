@@ -62,6 +62,20 @@ A tabela de classificação de pacientes vem do projeto complementar [**martech-
 
 ---
 
+## Prévia dos Dashboards
+
+> Gráficos gerados com **dados sintéticos** para ilustrar as saídas dos notebooks — não representam números reais da empresa.
+
+| LTV:CAC por plataforma × marca (`01`) | Curvas de LTV acumulado (`03`) |
+|---|---|
+| ![LTV:CAC](docs/images/dash_01_cac_ltv_ratio.png) | ![Curvas de LTV](docs/images/dash_02_ltv_curves.png) |
+| **Heatmap de retenção por coorte (`04`)** | **Matriz Retenção × LTV (`04`)** |
+| ![Retenção por coorte](docs/images/dash_03_cohort_retention.png) | ![Matriz Retenção x LTV](docs/images/dash_04_retention_ltv_matrix.png) |
+
+![Simulador de impacto de CRM](docs/images/dash_05_crm_simulator.png)
+
+---
+
 ## Destaques Técnicos
 
 - **Sem contagem dupla:** o tamanho da coorte é calculado antes do join com as dimensões, e as coortes são deduplicadas com `QUALIFY ROW_NUMBER()`.
@@ -104,6 +118,8 @@ ltv-patient/
 │   ├── 02_profitable_acquisition_paths.ipynb
 │   ├── 03_ltv_curves.ipynb
 │   └── 04_retention_ltv_matrix_crm_simulator.ipynb
+├── docs/
+│   └── images/            # prévias dos dashboards (dados sintéticos)
 ├── requirements.txt
 ├── LICENSE
 ├── README.md

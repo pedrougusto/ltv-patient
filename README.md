@@ -62,6 +62,20 @@ The patient classification table comes from the companion project [**martech-ana
 
 ---
 
+## Dashboard Preview
+
+> Charts generated with **synthetic data** to illustrate the notebook outputs — they do not represent real company figures.
+
+| LTV:CAC by platform × brand (`01`) | Cumulative LTV curves (`03`) |
+|---|---|
+| ![LTV:CAC](docs/images/dash_01_cac_ltv_ratio.png) | ![LTV curves](docs/images/dash_02_ltv_curves.png) |
+| **Cohort retention heatmap (`04`)** | **Retention × LTV matrix (`04`)** |
+| ![Cohort retention](docs/images/dash_03_cohort_retention.png) | ![Retention x LTV matrix](docs/images/dash_04_retention_ltv_matrix.png) |
+
+![CRM impact simulator](docs/images/dash_05_crm_simulator.png)
+
+---
+
 ## Key Technical Highlights
 
 - **No double counting:** cohort size is computed before joining dimensions, and cohorts are deduplicated with `QUALIFY ROW_NUMBER()`.
@@ -104,6 +118,8 @@ ltv-patient/
 │   ├── 02_profitable_acquisition_paths.ipynb
 │   ├── 03_ltv_curves.ipynb
 │   └── 04_retention_ltv_matrix_crm_simulator.ipynb
+├── docs/
+│   └── images/            # dashboard previews (synthetic data)
 ├── requirements.txt
 ├── LICENSE
 ├── README.md
